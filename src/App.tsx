@@ -239,12 +239,12 @@ function App() {
       <h2
         style={{
           color: 'limegreen',
-          marginTop: 0,
-          textShadow: '-1px 2px 1px darkgreen',
+          margin: 0,
         }}
       >
-        Spotify Genre Explorer
+        Music Genre Explorer
       </h2>
+      <h4 style={{ marginTop: 0, color: 'limegreen' }}>Powered by Spotify</h4>
       <select
         style={{
           zIndex: 1,
