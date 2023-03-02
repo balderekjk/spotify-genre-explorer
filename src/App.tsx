@@ -190,7 +190,6 @@ function App() {
     };
 
     const runSearch = async () => {
-      setTracks([]);
       setSelectedIndex(-1);
       setLoading(true);
       const token = await getToken();
@@ -273,7 +272,7 @@ function App() {
       {tracks.map((track, index) => {
         return (
           <div
-            key={index}
+            key={track.id}
             style={{
               outline: '1px solid darkgray',
               padding: '10px 0',
@@ -315,7 +314,6 @@ function App() {
               }}
             >
               <video
-                key={'v' + index}
                 style={{
                   marginTop: '-96px',
                   outlineWidth: 0,
@@ -323,7 +321,11 @@ function App() {
                 controls
                 name="media"
               >
-                <source src={track.preview_url} type="audio/mpeg" />
+                <source
+                  key={track.preview_url}
+                  src={track.preview_url}
+                  type="audio/mpeg"
+                />
               </video>
             </div>
             <p style={{ width: '310px' }}>
