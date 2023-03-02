@@ -14,7 +14,7 @@ const spotifyGenres = [
   'black-metal',
   'bluegrass',
   'blues',
-  'bossanova',
+  // 'bossanova',
   'brazil',
   'breakbeat',
   'british',
@@ -190,6 +190,7 @@ function App() {
     };
 
     const runSearch = async () => {
+      setTracks([]);
       setSelectedIndex(-1);
       setLoading(true);
       const token = await getToken();
@@ -313,10 +314,8 @@ function App() {
                 marginTop: '8px',
               }}
             >
-              {/* <span>
-                <strong>Preview:</strong>
-              </span> */}
               <video
+                key={'v' + index}
                 style={{
                   marginTop: '-96px',
                   outlineWidth: 0,
@@ -324,7 +323,7 @@ function App() {
                 controls
                 name="media"
               >
-                <source src={track['preview_url']} type="audio/mpeg" />
+                <source src={track.preview_url} type="audio/mpeg" />
               </video>
             </div>
             <p style={{ width: '310px' }}>
