@@ -348,7 +348,7 @@ function App() {
       })}
       <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
         <button onClick={() => page && setPage(page - 1)}>Prev</button>
-        <span>
+        <span style={{ color: 'hsl(0,0%,97%)' }}>
           {total ? `Page: ${page + 1}/${total / 20}` : 'No results available'}
         </span>
         <button
